@@ -14,8 +14,8 @@ function App() {
   // État pour gérer la page active
   const [activePage, setActivePage] = useState('dashboard')
   
-  // État pour le dark mode
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  // État pour le dark mode (true = dark par défaut)
+  const [isDarkMode, setIsDarkMode] = useState(true)
 
   // Fonction pour changer de page
   const handlePageChange = (page) => {
@@ -28,8 +28,13 @@ function App() {
   }
 
   return (
-    <div className={`app-container ${isDarkMode ? 'dark-mode' : ''}`}>
-      <Sidebar activePage={activePage} onPageChange={handlePageChange} />
+    <div className={`app-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      <Sidebar 
+        activePage={activePage} 
+        onPageChange={handlePageChange}
+        isDarkMode={isDarkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
       
       <div className="main-content">
         <TopBar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
