@@ -1,0 +1,30 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 30px 40px;
+  max-width: 100%;
+}
+
+/* Dark Mode */
+.app-container.dark-mode {
+  background: #333333;
+  color: #ffffff;
+}
+
+.app-container.dark-mode .main-content {
+  background: #333333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}

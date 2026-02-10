@@ -1,34 +1,49 @@
-import Versions from './components/Versions'
-import electronLogo from './assets/electron.svg'
+import { useState } from 'react'
+import './Css/App.css'
+import Sidebar from './components/Sidebar'
+import TopBar from './components/TopBar'
+import Dashboard from './Pages/Dashboard'
+import PromptForm from './Pages/PromptForm'
+import UsePrompt from './Pages/UsePrompt'
+import Terms from './Pages/Terms'
+import About from './Pages/About'
+
+
 
 function App() {
-  const ipcHandle = () => window.electron.ipcRenderer.send('ping')
+  // État pour gérer la page active
+  const [activePage, setActivePage] = useState('dashboard')
+  
+  // État pour le dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  // Fonction pour changer de page
+  const handlePageChange = (page) => {
+    setActivePage(page)
+  }
+
+  // Fonction pour toggle le dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode)
+  }
 
   return (
-    <>
-      <img alt="logo" className="logo" src={electronLogo} />
-      <div className="creator">Powered by electron-vite</div>
-      <div className="text">
-        Build an Electron app with <span className="react">React</span>
+    <div className={`app-container ${isDarkMode ? 'dark-mode' : ''}`}>
+      <Sidebar activePage={activePage} onPageChange={handlePageChange} />
+      
+      <div className="main-content">
+        <TopBar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        
+        {/* Affichage conditionnel des pages */}
+        {activePage === 'dashboard' && <Dashboard onPageChange={handlePageChange} />}
+        {activePage === 'form' && <PromptForm onPageChange={handlePageChange} />}
+        {activePage === 'use' && <UsePrompt />}
+        {activePage === 'terms' && <Terms />}
+        {activePage === 'about' && <About onPageChange={handlePageChange} />}
+        
       </div>
-      <p className="tip">
-        Please try pressing <code>F12</code> to open the devTool
-      </p>
-      <div className="actions">
-        <div className="action">
-          <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">
-            Documentation
-          </a>
-        </div>
-        <div className="action">
-          <a target="_blank" rel="noreferrer" onClick={ipcHandle}>
-            Send IPC
-          </a>
-        </div>
-      </div>
-      <Versions></Versions>
-    </>
+    </div>
   )
 }
 
-export default App
+export default App;
