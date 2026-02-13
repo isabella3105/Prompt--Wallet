@@ -262,3 +262,346 @@
     height: 140px;
   }
 }
+
+/* Grille des prompts cards */
+.prompts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.prompt-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.prompt-card:hover {
+  border-color: #9333ea;
+  transform: translateY(-4px);
+}
+
+.prompt-card-header {
+  margin-bottom: 12px;
+}
+
+.prompt-card-header h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.prompt-category {
+  display: inline-block;
+  background: #2a2a2a;
+  color: #9333ea;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.prompt-preview {
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.prompt-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-edit {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.btn-edit:hover {
+  background: #9333ea;
+}
+
+.btn-delete {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  background: #ef4444;
+}
+
+.no-prompts {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-prompts p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.btn-create-first {
+  background: linear-gradient(135deg, #9333ea, #ec4899);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* Search Section */
+.search-section {
+  margin-bottom: 32px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #1a1a1a;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+  border-color: #9333ea;
+}
+
+.search-icon {
+  font-size: 18px;
+  color: #666;
+}
+
+.search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: #666;
+}
+
+.clear-search {
+  background: #2a2a2a;
+  border: none;
+  color: #a0a0a0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.clear-search:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* Prompts List Section */
+.prompts-list-section {
+  margin-top: 48px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.prompts-count {
+  font-size: 13px;
+  color: #a0a0a0;
+  background: #1a1a1a;
+  padding: 6px 14px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+}
+
+/* Cards rectangulaires pour les prompts */
+.prompts-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.prompt-card-rect {
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prompt-card-rect:hover {
+  border-color: #9333ea;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.2);
+}
+
+.prompt-card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.prompt-card-header:hover h3 {
+  color: #9333ea;
+}
+
+.prompt-category-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prompt-preview {
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.prompt-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.prompt-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.prompt-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-edit {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.btn-edit:hover {
+  background: #9333ea;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  background: #ef4444;
+  transform: translateY(-2px);
+}
+
+/* No prompts state */
+.no-prompts {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.no-prompts-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.no-prompts p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.btn-create-first {
+  background: linear-gradient(135deg, #9333ea, #ec4899);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-create-first:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .prompts-grid-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .prompts-grid-circular {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}

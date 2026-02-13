@@ -1,12 +1,19 @@
-import { contextBridge } from 'electron'
-import { electronAPI } from '@electron-toolkit/preload'
+const { contextBridge, ipcRenderer } = require('electron')
+const { electronAPI } = require('@electron-toolkit/preload')
 
-// Custom APIs for renderer
-const api = {}
+// API personnalisée pour le store
+const api = {
+  store: {
+    getPrompts: () => ipcRenderer.invoke('store:getPrompts'),
+    addPrompt: (promptData) => ipcRenderer.invoke('store:addPrompt', promptData),
+    updatePrompt: (id, promptData) => ipcRenderer.invoke('store:updatePrompt', id, promptData),
+    deletePrompt: (id) => ipcRenderer.invoke('store:deletePrompt', id),
+    getTheme: () => ipcRenderer.invoke('store:getTheme'),
+    setTheme: (theme) => ipcRenderer.invoke('store:setTheme', theme)
+  }
+}
 
-// Use `contextBridge` APIs to expose Electron APIs to
-// renderer only if context isolation is enabled, otherwise
-// just add to the DOM global.
+// Exposer les APIs au renderer process
 if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('electron', electronAPI)
