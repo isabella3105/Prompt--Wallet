@@ -35,6 +35,17 @@ function App() {
     loadData()
   }, [])
 
+
+// Écouter les raccourcis clavier
+useEffect(() => {
+  if (window.api?.navigation) {
+    window.api.navigation.onNavigate((page) => {
+      handlePageChange(page)
+    })
+  }
+}, [])
+
+
   const handlePageChange = (page, prompt = null) => {
     setActivePage(page)
     setSelectedPrompt(prompt || null)

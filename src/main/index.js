@@ -1,7 +1,8 @@
-const { app, shell, BrowserWindow, ipcMain } = require('electron')
+const { app, shell, BrowserWindow, ipcMain, Menu } = require('electron')
 const { join } = require('path')
 const { electronApp, optimizer, is } = require('@electron-toolkit/utils')
-const Store = require('electron-store').default || require('electron-store')
+const Store = require('electron-store')
+
 // Initialiser electron-store
 const store = new Store({
   name: 'prompt-wallet-data',
@@ -13,8 +14,10 @@ const store = new Store({
   }
 })
 
+let mainWindow = null
+
 function createWindow() {
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 900,
     height: 670,
     show: false,
@@ -41,6 +44,59 @@ function createWindow() {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+}
+
+// Créer le menu avec raccourcis
+function createMenu() {
+  const template = [
+    {
+      label: 'Prompt',
+      submenu: [
+        {
+          label: 'List',
+          accelerator: 'CmdOrCtrl+L',
+          click: () => {
+            if (mainWindow) {
+              mainWindow.webContents.send('navigate-to', 'dashboard')
+            }
+          }
+        },
+        {
+          label: 'New',
+          accelerator: 'CmdOrCtrl+N',
+          click: () => {
+            if (mainWindow) {
+              mainWindow.webContents.send('navigate-to', 'form')
+            }
+          }
+        }
+      ]
+    },
+    {
+      label: 'Info',
+      submenu: [
+        {
+          label: 'Terms of Use',
+          click: () => {
+            if (mainWindow) {
+              mainWindow.webContents.send('navigate-to', 'terms')
+            }
+          }
+        },
+        {
+          label: 'About',
+          click: () => {
+            if (mainWindow) {
+              mainWindow.webContents.send('navigate-to', 'about')
+            }
+          }
+        }
+      ]
+    }
+  ]
+
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
 }
 
 app.whenReady().then(() => {
@@ -103,10 +159,13 @@ app.whenReady().then(() => {
 
   // ========== Fin IPC Handlers ==========
 
+  createMenu()
   createWindow()
 
   app.on('activate', function () {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow()
+    }
   })
 })
 

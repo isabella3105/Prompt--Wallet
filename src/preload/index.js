@@ -10,6 +10,11 @@ const api = {
     deletePrompt: (id) => ipcRenderer.invoke('store:deletePrompt', id),
     getTheme: () => ipcRenderer.invoke('store:getTheme'),
     setTheme: (theme) => ipcRenderer.invoke('store:setTheme', theme)
+  },
+  navigation: {
+    onNavigate: (callback) => {
+      ipcRenderer.on('navigate-to', (_, page) => callback(page))
+    }
   }
 }
 
