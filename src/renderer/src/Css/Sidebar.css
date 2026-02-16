@@ -6,8 +6,10 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  height: 130vh;
+  height: 100vh; /* ← Exactement la hauteur de l'écran */
   overflow-y: auto;
+  top: 0;
+  left: 0;
 }
 
 .logo {
@@ -40,6 +42,7 @@
 .nav-menu {
   display: flex;
   flex-direction: column;
+  flex: 1; /* ← Prend tout l'espace disponible */
 }
 
 .nav-item {
@@ -70,30 +73,10 @@
   font-size: 18px;
 }
 
-/* Dark mode pour sidebar */
-.dark-mode .sidebar {
-  background: #2a2a2a;
-  border-right-color: #444444;
-}
-
-.dark-mode .nav-item {
-  color: #ffffff;
-}
-
-.dark-mode .nav-item:hover {
-  background: #3a3a3a;
-}
-
-.dark-mode .nav-item.active {
-  background: #4a3a5a;
-}
-
-
+/* Theme Toggle - tout en bas */
 .theme-toggle {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  margin: 20px; /* ← Marge normale, pas position absolute */
+  margin-top: auto; /* ← Pousse tout en bas automatiquement */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -119,10 +102,36 @@
   color: #a0a0a0;
 }
 
-/* Pour que la sidebar puisse positionner l'élément en bas */
-.sidebar {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 80px; /* Espace pour le toggle en bas */
+/* Dark mode pour sidebar */
+.dark-mode .sidebar {
+  background: #2a2a2a;
+  border-right-color: #444444;
+}
+
+.dark-mode .logo-text {
+  color: #b288c0;
+}
+
+.dark-mode .nav-item {
+  color: #ffffff;
+}
+
+.dark-mode .nav-item:hover {
+  background: #3a3a3a;
+}
+
+.dark-mode .nav-item.active {
+  background: #4a3a5a;
+}
+
+.dark-mode .theme-toggle {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .theme-toggle:hover {
+  background-color: #3a3a3a;
+}
+
+.dark-mode .theme-text {
+  color: #e0e0e0;
 }

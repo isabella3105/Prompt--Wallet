@@ -7,10 +7,17 @@
 
 .main-content {
   flex: 1;
+  margin-left: 250px; /* Décalage pour la sidebar fixe */
   padding: 40px 80px;
-  max-width: 1400px;
-  margin: 0 auto;
   background-color: #0f0f0f;
+  /* Pas de max-width ni margin auto ici */
+}
+
+/* Centrer le contenu DANS main-content */
+.main-content > * {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Light Mode (mode clair) */
@@ -46,8 +53,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .main-content {
+    margin-left: 0;
     padding: 20px;
-    max-width: 100%;
   }
 }
 
