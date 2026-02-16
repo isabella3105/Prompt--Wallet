@@ -53,6 +53,15 @@ const Dashboard = ({ onPageChange, prompts, onDeletePrompt }) => {
         </button>
       </header>
 
+       <div className="shortcuts-tip">
+      <span className="tip-icon">💡</span>
+      <span className="tip-text">
+        <strong>Keyboard Shortcuts:</strong> 
+        <kbd>Ctrl+L</kbd> Dashboard • 
+        <kbd>Ctrl+N</kbd> New Prompt
+      </span>
+    </div>
+
       {/* Barre de recherche en haut */}
       <section className="search-section">
         <div className="search-bar">

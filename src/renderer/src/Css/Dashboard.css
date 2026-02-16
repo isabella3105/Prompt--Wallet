@@ -714,3 +714,92 @@
 .app-container.light-mode .no-prompts p {
   color: #999;
 }
+
+
+/* Shortcuts Tip Badge */
+.shortcuts-tip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1));
+  border: 1px solid rgba(147, 51, 234, 0.3);
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tip-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.tip-text {
+  font-size: 14px;
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tip-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tip-text kbd {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9333ea;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Light Mode */
+.app-container.light-mode .shortcuts-tip {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(236, 72, 153, 0.05));
+  border-color: rgba(147, 51, 234, 0.2);
+}
+
+.app-container.light-mode .tip-text {
+  color: #555;
+}
+
+.app-container.light-mode .tip-text strong {
+  color: #333;
+}
+
+.app-container.light-mode .tip-text kbd {
+  background: #f0f0f0;
+  border-color: #d0d0d0;
+  color: #9333ea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shortcuts-tip {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .tip-text {
+    font-size: 13px;
+  }
+}
