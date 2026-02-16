@@ -444,4 +444,138 @@
 }
  
  
- 
+ /* ========== LIGHT MODE STYLES ========== */
+
+.app-container.light-mode .info-header {
+  border-bottom-color: #e0e0e0;
+}
+
+.app-container.light-mode .info-header h1 {
+  color: #333333;
+}
+
+.app-container.light-mode .info-subtitle {
+  color: #666;
+}
+
+.app-container.light-mode .version {
+  color: #999;
+}
+
+/* Sections */
+.app-container.light-mode .info-section {
+  background: #ffffff;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .info-section:hover {
+  border-color: #b0b0b0;
+}
+
+.app-container.light-mode .info-section h2 {
+  color: #333333;
+}
+
+.app-container.light-mode .info-section p {
+  color: #555555;
+}
+
+.app-container.light-mode .highlight-section {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(236, 72, 153, 0.05));
+  border-color: rgba(147, 51, 234, 0.2);
+}
+
+/* Text Blocks */
+.app-container.light-mode .text-block h3 {
+  color: #333333;
+}
+
+/* Features */
+.app-container.light-mode .feature-item {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .feature-item:hover {
+  border-color: #9333ea;
+}
+
+.app-container.light-mode .feature-item h3 {
+  color: #333333;
+}
+
+.app-container.light-mode .feature-item p {
+  color: #666;
+}
+
+/* Tech Grid */
+.app-container.light-mode .tech-item {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .tech-item:hover {
+  border-color: #9333ea;
+}
+
+.app-container.light-mode .tech-icon {
+  background: linear-gradient(135deg, #e0e0e0, #f0f0f0);
+}
+
+.app-container.light-mode .tech-info h3 {
+  color: #333333;
+}
+
+.app-container.light-mode .tech-info p {
+  color: #999;
+}
+
+/* Team Cards */
+.app-container.light-mode .team-card {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .team-card:hover {
+  border-color: #9333ea;
+}
+
+.app-container.light-mode .team-details h3 {
+  color: #333333;
+}
+
+.app-container.light-mode .team-details p {
+  color: #666;
+}
+
+/* Context List */
+.app-container.light-mode .context-item {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .context-icon {
+  background: linear-gradient(135deg, #e0e0e0, #f0f0f0);
+}
+
+.app-container.light-mode .context-item h4 {
+  color: #333333;
+}
+
+.app-container.light-mode .context-item p {
+  color: #666;
+}
+
+/* Features List */
+.app-container.light-mode .features-list li {
+  color: #555555;
+}
+
+/* Footer */
+.app-container.light-mode .copyright {
+  color: #999;
+}
+
+.app-container.light-mode .made-with {
+  color: #666;
+}

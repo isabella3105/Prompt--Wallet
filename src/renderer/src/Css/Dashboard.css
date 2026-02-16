@@ -605,3 +605,112 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 }
+
+
+/* ========== LIGHT MODE STYLES ========== */
+
+.app-container.light-mode .dashboard-header h1 {
+  color: #333333;
+}
+
+/* Search Bar */
+.app-container.light-mode .search-bar {
+  background-color: #ffffff;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .search-bar input {
+  color: #333333;
+}
+
+.app-container.light-mode .search-bar input::placeholder {
+  color: #999;
+}
+
+.app-container.light-mode .search-icon {
+  color: #999;
+}
+
+.app-container.light-mode .clear-search {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.app-container.light-mode .clear-search:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* Categories Section */
+.app-container.light-mode .categories-section h2,
+.app-container.light-mode .section-header h2 {
+  color: #999;
+}
+
+.app-container.light-mode .prompts-count {
+  background: #ffffff;
+  border-color: #d0d0d0;
+  color: #666;
+}
+
+/* Cercles */
+.app-container.light-mode .circle-content {
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .circle-title {
+  color: #333333;
+}
+
+.app-container.light-mode .card-label {
+  color: #666;
+}
+
+/* Cards rectangulaires */
+.app-container.light-mode .prompt-card-rect {
+  background: #ffffff;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .prompt-card-rect:hover {
+  border-color: #9333ea;
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.15);
+}
+
+.app-container.light-mode .prompt-card-header h3 {
+  color: #333333;
+}
+
+.app-container.light-mode .prompt-preview {
+  color: #666;
+}
+
+.app-container.light-mode .prompt-card-footer {
+  border-top-color: #e0e0e0;
+}
+
+.app-container.light-mode .prompt-date {
+  color: #999;
+}
+
+.app-container.light-mode .btn-edit,
+.app-container.light-mode .btn-delete {
+  background: #f0f0f0;
+  color: #333333;
+}
+
+.app-container.light-mode .btn-edit:hover {
+  background: #9333ea;
+  color: white;
+}
+
+.app-container.light-mode .btn-delete:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* No prompts */
+.app-container.light-mode .no-prompts p {
+  color: #999;
+}

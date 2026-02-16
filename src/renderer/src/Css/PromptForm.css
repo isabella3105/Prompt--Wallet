@@ -565,7 +565,162 @@
 
 
 
+/* ========== LIGHT MODE STYLES ========== */
 
+.app-container.light-mode .form-header h1 {
+  color: #333333;
+}
+
+.app-container.light-mode .form-subtitle {
+  color: #666;
+}
+
+.app-container.light-mode .form-section {
+  background: #ffffff;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .form-section:hover {
+  border-color: #b0b0b0;
+}
+
+.app-container.light-mode .section-title {
+  color: #333333;
+}
+
+.app-container.light-mode .form-group label {
+  color: #333333;
+}
+
+.app-container.light-mode .form-input,
+.app-container.light-mode .form-select,
+.app-container.light-mode .form-textarea {
+  background: #ffffff;
+  border-color: #d0d0d0;
+  color: #333333;
+}
+
+.app-container.light-mode .form-input:focus,
+.app-container.light-mode .form-select:focus,
+.app-container.light-mode .form-textarea:focus {
+  border-color: #9333ea;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+}
+
+.app-container.light-mode .form-input::placeholder,
+.app-container.light-mode .form-textarea::placeholder {
+  color: #999;
+}
+
+.app-container.light-mode .char-counter {
+  color: #999;
+}
+
+.app-container.light-mode .helper-btn {
+  background: #f0f0f0;
+  border-color: #d0d0d0;
+  color: #666;
+}
+
+.app-container.light-mode .helper-btn:hover {
+  background: #e0e0e0;
+  color: #333;
+  border-color: #9333ea;
+}
+
+.app-container.light-mode .help-text {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+  color: #666;
+}
+
+.app-container.light-mode .help-text code {
+  background: #e0e0e0;
+  color: #9333ea;
+}
+
+.app-container.light-mode .preview-section {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+}
+
+.app-container.light-mode .variables-count {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+  color: #666;
+}
+
+.app-container.light-mode .variable-item {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .variable-item:hover {
+  border-color: #9333ea;
+}
+
+.app-container.light-mode .variable-name {
+  color: #333333;
+}
+
+.app-container.light-mode .variable-type {
+  color: #999;
+}
+
+.app-container.light-mode .preview-header {
+  color: #999;
+}
+
+.app-container.light-mode .preview-content {
+  background: #ffffff;
+  border-color: #d0d0d0;
+  color: #333333;
+}
+
+.app-container.light-mode .no-variables p {
+  color: #999;
+}
+
+.app-container.light-mode .hint {
+  color: #999;
+}
+
+.app-container.light-mode .usage-example {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .usage-example h3 {
+  color: #666;
+}
+
+.app-container.light-mode .example-box {
+  background: #ffffff;
+  border-color: #d0d0d0;
+}
+
+.app-container.light-mode .example-box code {
+  color: #333333;
+}
+
+.app-container.light-mode .example-note {
+  color: #999;
+}
+
+.app-container.light-mode .form-actions {
+  border-top-color: #e0e0e0;
+}
+
+.app-container.light-mode .btn-cancel {
+  background: #f0f0f0;
+  border-color: #d0d0d0;
+  color: #666;
+}
+
+.app-container.light-mode .btn-cancel:hover {
+  background: #e0e0e0;
+  color: #333;
+  border-color: #b0b0b0;
+}
 
 
 
